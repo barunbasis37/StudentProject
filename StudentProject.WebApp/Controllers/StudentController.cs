@@ -13,12 +13,12 @@ namespace StudentProject.WebApp.Controllers
     {
         public IHttpActionResult Post(Student student)
         {
-            StudentService service=new StudentService(Db);
+            
             if (string.IsNullOrWhiteSpace(student.Id))
             {
                 student.Id = Guid.NewGuid().ToString();
             }
-            string addedId=service.Add(student);
+            string addedId=Service.Add(student);
             return Ok(addedId);
         }
     }

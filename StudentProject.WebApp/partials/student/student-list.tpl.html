@@ -1,10 +1,18 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-	<meta charset="utf-8" />
-</head>
-<body>
-
-</body>
-</html>
+﻿<table>
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>City</th>
+        <th>Address</th>
+        <th>Edit</th>
+    </tr>
+    <tr ng-repeat="s in vm.Students">
+        <td>{{s.name}}</td>
+        <td>{{s.email}}</td>
+        <td>{{s.phone}}</td>
+        <td>{{s.city}}</td>
+        <td>{{s.address}}</td>
+        <td>Edit</td>
+    </tr>
+</table>

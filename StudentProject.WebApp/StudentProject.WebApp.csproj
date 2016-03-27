@@ -330,7 +330,6 @@
     <Content Include="Scripts\angular-cookies.min.js.map" />
     <Content Include="Scripts\angular-aria.min.js.map" />
     <Content Include="Scripts\angular-animate.min.js.map" />
-    <Content Include="Scripts\angular-local-storage.min.js.map" />
     <Content Include="Scripts\i18n\angular-locale_aa-dj.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-er.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-et.js" />
@@ -1078,6 +1077,7 @@
     <Content Include="Scripts\jquery-2.2.1.js" />
     <Content Include="Scripts\jquery-2.2.1.min.js" />
     <Content Include="Scripts\jquery-2.2.1.min.map" />
+    <Content Include="Scripts\angular-local-storage.min.js.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
@@ -1105,7 +1105,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App\Account\" />
-    <Folder Include="App\Home\" />
     <Folder Include="App_Data\" />
     <Folder Include="partials\account\" />
   </ItemGroup>
@@ -1118,7 +1117,9 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="App\App.config.ts" />
+    <TypeScriptCompile Include="App\Home\HomeController.ts" />
     <TypeScriptCompile Include="App\Models\Models.ts" />
+    <TypeScriptCompile Include="App\Student\Stdcontroller.ts" />
     <TypeScriptCompile Include="App\Student\StudentController.ts" />
     <TypeScriptCompile Include="App\Student\StudentQueryController.ts" />
     <TypeScriptCompile Include="App\Student\StudentService.ts" />
@@ -1146,6 +1147,10 @@
     <ProjectReference Include="..\StudentProject.Service\StudentProject.Service.csproj">
       <Project>{B5EC7C11-CDD7-4FDA-9215-76020D11D444}</Project>
       <Name>StudentProject.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StudentProject.ViewModel\StudentProject.ViewModel.csproj">
+      <Project>{DA942E78-9F6C-4FCA-902C-B96938B3F571}</Project>
+      <Name>StudentProject.ViewModel</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

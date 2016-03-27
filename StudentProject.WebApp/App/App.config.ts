@@ -34,7 +34,13 @@
                     controller: "StudentQueryController",
                     controllerAs: "vm"
                 })
-                ;
+                .state("root.student-list", {
+                    url: "/student-list",
+                    templateUrl: "partials/student/student-list.tpl.html",
+                    controller: "StudentQueryController",
+                    controllerAs: "vm"
+                });
+                
 
 
         }

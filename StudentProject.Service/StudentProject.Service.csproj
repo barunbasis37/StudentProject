@@ -62,6 +62,10 @@
       <Project>{AF9AB7E1-7A51-4E8A-9455-09726C01ECD5}</Project>
       <Name>StudentProject.Repository</Name>
     </ProjectReference>
+    <ProjectReference Include="..\StudentProject.ViewModel\StudentProject.ViewModel.csproj">
+      <Project>{DA942E78-9F6C-4FCA-902C-B96938B3F571}</Project>
+      <Name>StudentProject.ViewModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

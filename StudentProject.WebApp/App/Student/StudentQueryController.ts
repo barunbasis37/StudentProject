@@ -4,15 +4,25 @@ module App {
 
     
 
-    class StudentQueryController {
-        title: string = "StudentQueryController";
+    export class StudentQueryController {
+        
+    students:Student[];
+     studentService:StudentService;
+     static $inject: string[] = ["StudentService"];
 
-        static $inject: string[] = ["$location"];
-
-        constructor(private $location: ng.ILocationService) {
-            
-        }
-
+     constructor(studentService: StudentService) {
+         this.students = [];
+         this.studentService = studentService;
+         this.GetAll();
+     }
+     GetAll() {
+         var self = this;
+         self.studentService.GetAll().then(success => {
+             console.log(success);
+         },error => {
+             console.log(error);
+         });
+     }
         
     }
 

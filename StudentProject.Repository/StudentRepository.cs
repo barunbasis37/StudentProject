@@ -35,5 +35,18 @@ namespace StudentProject.Repository
             DbRepoContext.SaveChanges();
             return student.Id;
         }
+
+
+        public IQueryable<Student> GetAll()
+        {
+            return DbRepoContext.Students.AsQueryable();
+        }
+
+        public StudentViewModel GetDetail(string id)
+        {
+            Student student = DbRepoContext.Students.Find(id);
+            StudentViewModel viewModel = new StudentViewModel(student);
+            return viewModel;
+        }
     }
 }

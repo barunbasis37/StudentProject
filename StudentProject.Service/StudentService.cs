@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using StudentProject.Model;
 using StudentProject.Repository;
+using StudentProject.ViewModel;
 
 namespace StudentProject.Service
 {
@@ -25,6 +26,18 @@ namespace StudentProject.Service
                 return repository.Update(student);
             }
             return repository.Add(student);
+        }
+
+        public List<StudentViewModel> GetAll()
+        {
+            IQueryable<Student> queryables= repository.GetAll();
+            var viewmodels = queryables.ToList().Select(x => new StudentViewModel(x)).ToList();
+            return viewmodels;
+        }
+
+        public StudentViewModel GetDetails(string id)
+        {
+            return repository.GetDetail(id);
         }
     }
 }
