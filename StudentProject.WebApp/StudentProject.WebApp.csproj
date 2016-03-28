@@ -260,6 +260,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="index.html" />
+    <Content Include="partials\account\signin.tpl.html" />
     <Content Include="partials\home\home.tpl.html" />
     <Content Include="partials\student\student-entry.tpl.html" />
     <Content Include="partials\student\student-list.tpl.html" />
@@ -292,6 +293,7 @@
     <Content Include="Scripts\angular-touch.min.js" />
     <Content Include="Scripts\angular-ui-router.js" />
     <Content Include="Scripts\angular-ui-router.min.js" />
+    <None Include="Scripts\angular.intellisense.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -1104,9 +1106,7 @@
     <Content Include="Scripts\version.json" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App\Account\" />
     <Folder Include="App_Data\" />
-    <Folder Include="partials\account\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -1116,10 +1116,11 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="App\Account\AuthService.ts" />
+    <TypeScriptCompile Include="App\Account\SignInController.ts" />
     <TypeScriptCompile Include="App\App.config.ts" />
     <TypeScriptCompile Include="App\Home\HomeController.ts" />
     <TypeScriptCompile Include="App\Models\Models.ts" />
-    <TypeScriptCompile Include="App\Student\Stdcontroller.ts" />
     <TypeScriptCompile Include="App\Student\StudentController.ts" />
     <TypeScriptCompile Include="App\Student\StudentQueryController.ts" />
     <TypeScriptCompile Include="App\Student\StudentService.ts" />

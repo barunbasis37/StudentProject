@@ -7,8 +7,8 @@ module App {
     export class StudentQueryController {
         
     students:Student[];
-     studentService:StudentService;
-     static $inject: string[] = ["StudentService"];
+     private studentService:StudentService;
+     static $inject = ["StudentService"];
 
      constructor(studentService: StudentService) {
          this.students = [];
@@ -26,5 +26,5 @@ module App {
         
     }
 
-    angular.module("app").controller("StudentQueryController", StudentQueryController);
+    angular.module('app').controller('StudentQueryController', StudentQueryController);
 }

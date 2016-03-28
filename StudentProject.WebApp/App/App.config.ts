@@ -22,6 +22,12 @@
                 controller: "HomeController",
                 controllerAs: "vm"
                 })
+                .state("root.signin", {
+                    url: "/signin",
+                    templateUrl: "partials/account/signin.tpl.html",
+                    controller: "SignInController",
+                    controllerAs: "vm"
+                })
                 .state("root.student-entry", {
                     url: "/student-entry",
                     templateUrl: "partials/student/student-entry.tpl.html",
@@ -40,12 +46,9 @@
                     controller: "StudentQueryController",
                     controllerAs: "vm"
                 });
-                
-
-
         }
-
+        
     }
-    angular.module('app',["ui.router","ngResource","LocalStorageModule"]);
-    angular.module('app').config(AppConfig);
+    angular.module("app", ["ui.router", "ngResource"]);
+    angular.module("app").config(AppConfig);
 }

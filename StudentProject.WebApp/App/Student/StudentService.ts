@@ -7,9 +7,9 @@ module App {
         private qService: angular.IQService;
         private authService: AuthService;
 
-        static $inject: string[] = ["$http", "$q", "AuthService"];
+        static $inject: string[] = ["$http", "$q","AuthService"];
 
-        constructor(private $http: ng.IHttpService, private $q: ng.IQService, auth: AuthService) {
+        constructor(private $http: ng.IHttpService, private $q: ng.IQService,auth:AuthService) {
             this.httpService = $http;
             this.qService = $q;
             this.authService = auth;
@@ -33,7 +33,7 @@ module App {
         GetAll() {
             var self = this;
             var deffered = self.qService.defer();
-            var config;
+            var config: angular.IRequestShortcutConfig = { headers: { 'Authorization': "Bearer"+ self.authService.accountInfo.AccessToken } };
             self.httpService.get("api/StudentQuery", config).then(success => { return deffered.resolve(success) }, error => { return deffered.reject(error) });
             return deffered.promise;
         }
