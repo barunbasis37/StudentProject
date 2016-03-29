@@ -9,7 +9,7 @@ using StudentProject.ViewModel;
 
 namespace StudentProject.WebApp.Controllers
 {
-    //[Authorize]
+    [Authorize]
     public class StudentQueryController : BaseController
     {
         protected StudentService Service;

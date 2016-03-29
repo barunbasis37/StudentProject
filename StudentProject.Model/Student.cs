@@ -15,7 +15,7 @@ namespace StudentProject.Model
         [DataType(DataType.EmailAddress, ErrorMessage = "E-mail is not valid")]
         public string Email { get; set; }
         [Required(ErrorMessage = "Phone Field can't be empty")]
-        //[RegularExpression("^(?!0+$)(\\+\\d{1,3}[- ]?)?(?!0+$)\\d{10,15}$", ErrorMessage = "Please enter valid phone no.")]
+        [RegularExpression("^(?!0+$)(\\+\\d{1,3}[- ]?)?(?!0+$)\\d{10,11}$", ErrorMessage = "Please enter valid phone no.")]
         public string Phone { get; set; }
         [Required(ErrorMessage = "City Field can't be empty")]
         public string City { get; set; }
