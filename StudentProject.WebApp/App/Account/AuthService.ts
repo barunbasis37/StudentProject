@@ -8,18 +8,18 @@ module App {
     }
     
     export class AuthService {
-        private localStorageService: angular.local.storage.ILocalStorageService;
+        //private localStorageService: angular.local.storage.ILocalStorageService;
         accountInfo:AccountInfo;
 
-        static $inject : string[] = ["localStorageService"];
-        constructor(localStorageService: angular.local.storage.ILocalStorageService ) {
+        //static $inject : string[] = ["localStorageService"];
+        constructor() {
             this.accountInfo = new AccountInfo();
-            this.localStorageService = localStorageService;
+            //this.localStorageService = localStorageService;
         }
-        Self(acc:AccountInfo) : void {
-            var self = this;
-            self.localStorageService.set("AccountInfo", acc);
-        }
+        //Self(acc:AccountInfo) : void {
+        //    var self = this;
+        //    self.localStorageService.set("AccountInfo", acc);
+        //}
         
     }
 
