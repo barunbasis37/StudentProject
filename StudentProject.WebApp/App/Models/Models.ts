@@ -1,14 +1,14 @@
 ﻿
 module App {
     class Entity {
-        id: string;
+        Id: string;
     }
     export class Student extends Entity {
-        name: string;
-        email: string;
-        phone: string;
-        city: string;
-        address: string;
+        Name: string;
+        Email: string;
+        Phone: string;
+        City: string;
+        Address: string;
     }
     
 }

@@ -11,9 +11,10 @@ namespace StudentProject.WebApp.Controllers
 {
     public class StudentController : BaseController
     {
+       
         public IHttpActionResult Post(Student student)
         {
-            
+            StudentService Service = new StudentService(Db);
             if (string.IsNullOrWhiteSpace(student.Id))
             {
                 student.Id = Guid.NewGuid().ToString();

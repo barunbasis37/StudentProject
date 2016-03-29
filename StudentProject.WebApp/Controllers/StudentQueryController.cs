@@ -9,9 +9,15 @@ using StudentProject.ViewModel;
 
 namespace StudentProject.WebApp.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class StudentQueryController : BaseController
     {
+        protected StudentService Service;
+
+        public StudentQueryController()
+        {
+            Service = new StudentService(Db);
+        }
         public IHttpActionResult Get()
         {
             List<StudentViewModel> viewModels=Service.GetAll();

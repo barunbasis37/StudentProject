@@ -6,22 +6,24 @@ module App {
 
     export class StudentQueryController {
         
-    students:Student[];
+    Students:Student[];
      private studentService:StudentService;
      static $inject = ["StudentService"];
 
      constructor(studentService: StudentService) {
-         this.students = [];
+         this.Students = [];
          this.studentService = studentService;
          this.GetAll();
      }
      GetAll() {
          var self = this;
-         self.studentService.GetAll().then(success => {
-             console.log(success);
-         },error => {
+         var success = result => {
+             self.Students = result.data as Student[];
+         }
+         var error=error=> {
              console.log(error);
-         });
+         }
+         self.studentService.GetAll().then(success,error);
      }
         
     }

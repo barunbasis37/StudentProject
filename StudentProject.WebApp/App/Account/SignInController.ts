@@ -14,7 +14,7 @@ module App {
         private httpService: angular.IHttpService;
         private qService: angular.IQService;
         private authService: AuthService;
-        static $inject: string[] = ["$location", "$httpService", "$q","AuthService"];
+        static $inject: string[] = ["$location", "$http", "$q","AuthService"];
 
         constructor(private $location: ng.ILocationService, private http: angular.IHttpService, private q: angular.IQService, auth: AuthService) {
             
@@ -23,23 +23,24 @@ module App {
             this.authService = auth;
         }
 
-        activate() {
-
-        }
+        
         Signin(): void {
             console.log('i m going to post the values');
             console.log(this.User);
             var self = this;
-            var req = "username=" + self.User.Username + "&password=" + self.User.Password + "&grant_type=password";
-            var success=function(result) {
-                var token = result.data.access_token;
-                self.authService.accountInfo.UserName = result.data.userName;
-                self.authService.accountInfo.AccessToken=token
-                console.log(token);
-            }
 
             var config: angular.IRequestShortcutConfig = { headers: { 'Content-Type': "application/x-www-form-urlencoded" } };
-            self.httpService.post('/token', req, config).then(success,error=>{console.log(error)});
+            var success = function(result) {
+                var token = result.data.access_token;
+                console.log(token);
+                self.authService.accountInfo.UserName = result.data.userName;
+                self.authService.accountInfo.AccessToken = token;
+            }
+            var error = function (error) {
+                console.log(error);
+            }
+            var req = "username=" + self.User.Username + "&password=" + self.User.Password + "&grant_type=password";
+            self.httpService.post('/token', req, config).then(success,error);
         }
     }
 

@@ -19,7 +19,7 @@ module App {
 
             var self = this;
             var deffered = self.qService.defer();
-            self.httpService.post("api/student", data).then(success => { return deffered.resolve(success); }, error => { return deffered.reject(error);});
+            self.httpService.post("api/Student", data).then(success => { return deffered.resolve(success); }, error => { return deffered.reject(error);});
             return deffered.promise;
         }
 
@@ -33,7 +33,7 @@ module App {
         GetAll() {
             var self = this;
             var deffered = self.qService.defer();
-            var config: angular.IRequestShortcutConfig = { headers: { 'Authorization': "Bearer"+ self.authService.accountInfo.AccessToken } };
+            var config: angular.IRequestShortcutConfig = { headers: { 'Authorization': "Bearer "+ self.authService.accountInfo.AccessToken } };
             self.httpService.get("api/StudentQuery", config).then(success => { return deffered.resolve(success) }, error => { return deffered.reject(error) });
             return deffered.promise;
         }

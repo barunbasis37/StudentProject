@@ -19,8 +19,17 @@ namespace StudentProject.Repository
 
         public string Add(Student student)
         {
-            Student addStudent=DbRepoContext.Students.Add(student);
-            DbRepoContext.SaveChanges();
+            Student addStudent = null;
+            try
+            {
+                addStudent = DbRepoContext.Students.Add(student);
+                DbRepoContext.SaveChanges();
+                
+            }
+            catch (Exception ex)
+            {
+                addStudent.Id = ex.Message;
+            }
             return addStudent.Id;
         }
 

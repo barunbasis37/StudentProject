@@ -19,9 +19,6 @@
                     console.log(error);
                 });
             }
-
-            
-
         }
         Save() {
             var self = this;
