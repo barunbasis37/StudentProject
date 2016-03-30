@@ -14,5 +14,6 @@ namespace StudentProject.Model
             
         }
         public DbSet<Student> Students { get; set; } 
+        public DbSet<City> Cities { get; set; } 
     }
 }

@@ -2,13 +2,31 @@
     <div class="section">
         <div class="row">
             <h1>Student Registration</h1>
-            <form name="studentregistration" ng-submit="vm.Save()">
-                Name:<input type="text" ng-model="vm.Student.Name" /><br />
-                Email:<input type="text" ng-model="vm.Student.Email" /><br />
-                Phone:<input type="text" ng-model="vm.Student.Phone" /><br />
-                City:<input type="text" ng-model="vm.Student.City" /><br />
-                Address:<input type="text" ng-model="vm.Student.Address" /><br />
-                <input type="submit" value="Save" />
+            <form class="col-md-6" name="studentForm" ng-submit="studentForm.$valid && vm.SaveIfValidated();" novalidate>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input class="form-control" id="name" type="text" ng-model="vm.Student.Name" required />
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone:</label>
+                    <input class="form-control" name="phone" id="phone" type="number" ng-model="vm.Student.Phone" ng-pattern="vm.phoneRegEx" required />
+                    <span style="color : red" ng-show="!studentForm.phone.$valid && studentForm.phone.$touched">Phone number has to be 11 digits</span>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input class="form-control" name="email" id="email" type="email" ng-model="vm.Student.Email" />
+                    <span style="color : red" ng-show="vm.Submitted && !vm.emailValid">This email is already taken!</span>
+                </div>
+                <div class="form-group">
+                    <label for="city">City:</label>
+                    <input class="form-control" id="city" name="city" type="text" ng-model="vm.Student.City" required />
+                    <span style="color : red" ng-show="vm.Submitted && !vm.cityValid">This city is not valid</span>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address:</label>
+                    <input class="form-control" id="address" type="text" ng-model="vm.Student.Address" />
+                </div>
+                <input class="btn btn-primary" type="submit" value="Save" ng-disabled="!studentForm.$valid" />
             </form>
         </div>
     </div>

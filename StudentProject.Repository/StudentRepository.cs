@@ -37,7 +37,14 @@ namespace StudentProject.Repository
         {
             return DbRepoContext.Students.Any(s => s.Id == id);
         }
-
+        public bool EmailExists(string email)
+        {
+            return DbRepoContext.Students.Any(s => s.Email == email);
+        }
+        public bool ValidCity(string city)
+        {
+            return DbRepoContext.Cities.Any(c => c.Name.ToLower() == city.ToLower());
+        }
         public string Update(Student student)
         {
             DbRepoContext.Entry(student).State=EntityState.Modified;
@@ -57,5 +64,7 @@ namespace StudentProject.Repository
             StudentViewModel viewModel = new StudentViewModel(student);
             return viewModel;
         }
+
+        
     }
 }

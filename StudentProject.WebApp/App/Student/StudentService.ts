@@ -37,6 +37,20 @@ module App {
             self.httpService.get("api/StudentQuery", config).then(success => { return deffered.resolve(success) }, error => { return deffered.reject(error) });
             return deffered.promise;
         }
+
+        EmailExists(email: string): angular.IPromise<any> {
+            var self = this;
+            var deffered = self.qService.defer();
+            self.httpService.get("api/student?email=" + email).then(success => { return deffered.resolve(success) }, error => { return deffered.reject(error) });
+            return deffered.promise;
+        }
+
+        CityExists(city: string): angular.IPromise<any> {
+            var self = this;
+            var deffered = self.qService.defer();
+            self.httpService.get("api/student?city=" + city).then(success => { return deffered.resolve(success) }, error => { return deffered.reject(error) });
+            return deffered.promise;
+        }
     }
 
     angular.module("app").service("StudentService", StudentService);

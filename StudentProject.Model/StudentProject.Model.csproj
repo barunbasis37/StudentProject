@@ -50,10 +50,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessDbContext.cs" />
+    <Compile Include="City.cs" />
     <Compile Include="Entity.cs" />
     <Compile Include="Migrations\201603270550472_InitialCreate.cs" />
     <Compile Include="Migrations\201603270550472_InitialCreate.Designer.cs">
       <DependentUpon>201603270550472_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603300415576_CityAdd.cs" />
+    <Compile Include="Migrations\201603300415576_CityAdd.Designer.cs">
+      <DependentUpon>201603300415576_CityAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603300840074_Updatedatabase.cs" />
+    <Compile Include="Migrations\201603300840074_Updatedatabase.Designer.cs">
+      <DependentUpon>201603300840074_Updatedatabase.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Student.cs" />
@@ -68,6 +77,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201603270550472_InitialCreate.resx">
       <DependentUpon>201603270550472_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603300415576_CityAdd.resx">
+      <DependentUpon>201603300415576_CityAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603300840074_Updatedatabase.resx">
+      <DependentUpon>201603300840074_Updatedatabase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

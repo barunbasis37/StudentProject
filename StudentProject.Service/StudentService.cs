@@ -20,6 +20,8 @@ namespace StudentProject.Service
         
         public string Add(Student student)
         {
+            if (!repository.ValidCity(student.City))
+                throw new ArgumentException("" + student.City + " is not a valid City");
             bool studentIdExist = repository.Exists(student.Id);
             if (studentIdExist)
             {
@@ -38,6 +40,15 @@ namespace StudentProject.Service
         public StudentViewModel GetDetails(string id)
         {
             return repository.GetDetail(id);
+        }
+
+        public bool EmailExists(string email)
+        {
+            return repository.EmailExists(email);
+        }
+        public bool CityExists(string city)
+        {
+            return repository.ValidCity(city);
         }
     }
 }
