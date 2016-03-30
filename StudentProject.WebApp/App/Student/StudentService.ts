@@ -26,7 +26,8 @@ module App {
         GetDetails(id) {
             var self = this;
             var deffered = self.qService.defer();
-            self.httpService.get("api/StudentQuery?id=" + id).then(success => { return deffered.resolve(success); }, error => { return deffered.reject(error) });
+            var config: angular.IRequestShortcutConfig = { headers: { 'Authorization': "Bearer " + self.authService.accountInfo.AccessToken } };
+            self.httpService.get("api/StudentQuery?id=" + id,config).then(success => { return deffered.resolve(success); }, error => { return deffered.reject(error) });
             return deffered.promise;
         }
 

@@ -28,6 +28,15 @@
             }
         }
 
+        //IsValidPhoneNo(data: number): boolean {
+        //    var sp: string = data + "";
+        //    if (sp.length === 10) {
+        //        return true;
+        //    }
+        //    else
+        //        return false;
+        //}
+
         SaveIfValidated() {
             var self = this;
             self.studentService.EmailExists(self.Student.Email).then(emailsuccess => {

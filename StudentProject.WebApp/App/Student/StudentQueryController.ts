@@ -2,8 +2,6 @@
 module App {
     "use strict";
 
-    
-
     export class StudentQueryController {
         
     Students:Student[];

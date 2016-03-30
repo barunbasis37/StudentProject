@@ -14,13 +14,13 @@
                 </div>
                 <div class="form-group">
                     <label for="email">E-mail:</label>
-                    <input class="form-control" name="email" id="email" type="email" ng-model="vm.Student.Email" />
-                    <span style="color : red" ng-show="vm.Submitted && !vm.emailValid">This email is already taken!</span>
+                    <input class="form-control" name="email" id="email" type="email" ng-model="vm.Student.Email" required />
+                    <span style="color : red" ng-show="vm.Submitted && !vm.EmailExistValidation">This email is already taken!</span>
                 </div>
                 <div class="form-group">
                     <label for="city">City:</label>
-                    <input class="form-control" id="city" name="city" type="text" ng-model="vm.Student.City" required />
-                    <span style="color : red" ng-show="vm.Submitted && !vm.cityValid">This city is not valid</span>
+                    <input class="form-control" id="city" name="city" type="text" ng-model="vm.Student.City"  required />
+                    <span style="color : red" ng-show="vm.Submitted && !vm.CityValid">This city is not valid</span>
                 </div>
                 <div class="form-group">
                     <label for="address">Address:</label>
